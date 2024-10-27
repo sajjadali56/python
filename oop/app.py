@@ -20,6 +20,10 @@ class Student:
 
     def get_marks(self):
         return self.marks
+
+    @property
+    def percent(self):
+        return str(self.avg_marks()) + "%"
     
     @staticmethod
     def hey():
@@ -32,7 +36,7 @@ class Student:
 Student.hey()
 std = Student("Ali", [78, 56, 67])
 # print(std.name, std.college_name)
-print(std.name, std.avg_marks())
+print(std.name, std.percent)
 
 
 """
