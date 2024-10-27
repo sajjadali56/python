@@ -37,3 +37,26 @@ greet("Alice")
 # Before the function call
 # Hello, Alice!
 # After the function call
+
+
+
+
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before the function call")
+        result = func(*args, **kwargs)  # Capture return value
+        print("After the function call")
+        return result  # Return result to caller
+    return wrapper
+
+@my_decorator
+def add(x, y):
+    return x + y
+
+result = add(3, 4)
+print("Result:", result)
+
+# Output:
+# Before the function call
+# After the function call
+# Result: 7
