@@ -60,3 +60,29 @@ print("Result:", result)
 # Before the function call
 # After the function call
 # Result: 7
+
+
+
+
+def uppercase(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result.upper()
+    return wrapper
+
+def greet_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Hello!")
+        return func(*args, **kwargs)
+    return wrapper
+
+@greet_decorator
+@uppercase
+def greet(name):
+    return f"Good morning, {name}"
+
+print(greet("Alice"))
+
+# Output:
+# Hello!
+# GOOD MORNING, ALICE
