@@ -46,7 +46,16 @@ This does not change the class variable college_name; it only overrides it for s
 std.college_name = "KIBA"
 std.grade = "A"
 
-# s2 = Student("Sajjad Ali", 98)
-# print(s2.name, s2.college_name, std.college_name)
+s2 = Student("Sajjad Ali", 98)
+print(s2.name, s2.college_name, std.college_name)
 
 std.welcome()
+
+class LawStudent(Student):
+
+    def __init__(self):
+        print("Child Constructor")
+
+
+print()
+std = LawStudent() # Child Constructor
