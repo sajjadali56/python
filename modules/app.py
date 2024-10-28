@@ -1,7 +1,7 @@
 from mymodule import greet
-from my_package import math
+from my_package import add
 
 
 greet("Sajjad")
 
-print(math.add(1, 2, 3))
+print(add(1, 2, 3))
