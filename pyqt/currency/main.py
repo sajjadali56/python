@@ -8,7 +8,7 @@ from service import *
 
 import sys
 
-ref_currency = "ref_currency"
+REF_CURRENCY = "ref_currency"
 
 class ConfigParameters(QDialog, configDialog.Ui_Dialog):
     def __init__(self, parent=None):
@@ -17,12 +17,12 @@ class ConfigParameters(QDialog, configDialog.Ui_Dialog):
 
         self.config = read_config()
 
-        self.comboBoxDefaultRef.setCurrentText(self.config[ref_currency])
+        self.comboBoxDefaultRef.setCurrentText(self.config[REF_CURRENCY])
 
         self.buttonBox.accepted.connect(self.update_config)
 
     def update_config(self):
-        self.config[ref_currency] = self.comboBoxDefaultRef.currentText()
+        self.config[REF_CURRENCY] = self.comboBoxDefaultRef.currentText()
         
         write_config(self.config)
     
@@ -35,11 +35,16 @@ class MainDialog(QDialog, mainDialog.Ui_Dialog):
 
         self.config = read_config()
 
-        self.comboBoxRef.setCurrentText(self.config[ref_currency])
+        self.comboBoxRef.setCurrentText(self.config[REF_CURRENCY])
 
         self.btnLoadRates.clicked.connect(self.load_rates)
         self.btnCondifgure.clicked.connect(self.open_config_window)
-    
+        self.comboBoxRef.currentIndexChanged.connect(self.load_rates)
+
+        url = "ui/logo.jpg"
+        pixmap = QPixmap(url)
+        self.labelImage.setPixmap(pixmap)
+        self.labelImage.setScaledContents(True)    
     
     def load_rates(self):
         reference = self.comboBoxRef.currentText()
@@ -53,7 +58,7 @@ class MainDialog(QDialog, mainDialog.Ui_Dialog):
         self.configParameters.exec_()
 
         self.config = read_config()
-        self.comboBoxRef.setCurrentText(self.config[ref_currency])
+        self.comboBoxRef.setCurrentText(self.config[REF_CURRENCY])
 
         self.btnLoadRates.click()
 

@@ -7,8 +7,6 @@ def get_rates(currency):
     response = requests.get(url)
     data = response.json()
 
-    print(data)
-
     rates = data['rates']
     return rates
 

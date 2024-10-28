@@ -11,20 +11,20 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Currency Converter</string>
   </property>
   <widget class="QLabel" name="labelTitle">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
-     <width>221</width>
-     <height>18</height>
+     <x>180</x>
+     <y>20</y>
+     <width>281</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <pointsize>20</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -133,14 +133,23 @@
     <string>Load Rates</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsViewImage">
+  <widget class="QLabel" name="labelImage">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>40</y>
-     <width>256</width>
-     <height>192</height>
+     <x>50</x>
+     <y>70</y>
+     <width>511</width>
+     <height>200</height>
     </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>logo.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
