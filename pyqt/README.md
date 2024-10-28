@@ -13,3 +13,10 @@ pip3 install PyInstaller
 pyinstaller app.py
 pyinstaller app.spec
 ```
+
+# 
+
+Type this code to navigate to the folder containing the ui file and convert the .ui file to a .py file:
+
+cd "your/ui/folder/here"
+pyuic5 mainDialog.ui -o mainDialog.py
