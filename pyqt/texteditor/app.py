@@ -6,7 +6,7 @@ import sys
 from ui.main import Ui_MainWindow
 from service import *
 
-filter = "Text Files (*.py *.txt *.java *.html)"
+filter = "Text Files(*.txt);; Python Files(*.py)"
 
 class Main(QMainWindow, Ui_MainWindow):
 
@@ -14,6 +14,8 @@ class Main(QMainWindow, Ui_MainWindow):
         super(Main, self).__init__()
         # loadUi("ui/main.ui", self)
         self.setupUi(self)
+
+        self.textEdit.setTabStopWidth(16)
 
         self.currentPath = None
 
@@ -48,6 +50,7 @@ class Main(QMainWindow, Ui_MainWindow):
     def saveFileAs(self):
         filename = QFileDialog.getSaveFileName(self, "Save File", ".", filter)[0]
         if filename:
+            print(f)
             self.currentPath = filename
             self.setWindowTitle(filename)
             write(self.currentPath, self.textEdit.toPlainText())
@@ -65,7 +68,18 @@ class Main(QMainWindow, Ui_MainWindow):
         
             
     def setDarkMode(self):
-        ""
+        self.setStyleSheet("""
+        QWidget{
+            background-color: rgb(33,33,33);
+            color: #FFFFFF;
+        }
+        QTextEdit{
+            background-color: rgb(46,46,46);
+        }
+            QMenuBar::item:selected{
+            color: #000000
+        } 
+        """)
 
     def setLightMode(self):
         ""
