@@ -116,6 +116,8 @@ class Ui_MainWindow(object):
         self.actionSet_Dark_Mode.setText(_translate("MainWindow", "Set Dark Mode"))
         self.actionSet_Light_Mode.setText(_translate("MainWindow", "Set Light Mode"))
         self.actionIncrease_Font_Size.setText(_translate("MainWindow", "Increase Font Size"))
+        self.actionIncrease_Font_Size.setShortcut(_translate("MainWindow", "Ctrl+Shift+="))
         self.actionOpen.setText(_translate("MainWindow", "Open"))
         self.actionOpen.setShortcut(_translate("MainWindow", "Ctrl+O"))
         self.actionDecrease_Font_Size.setText(_translate("MainWindow", "Decrease Font Size"))
+        self.actionDecrease_Font_Size.setShortcut(_translate("MainWindow", "Ctrl+Shift+-"))

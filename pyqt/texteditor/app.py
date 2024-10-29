@@ -15,9 +15,12 @@ class Main(QMainWindow, Ui_MainWindow):
         # loadUi("ui/main.ui", self)
         self.setupUi(self)
 
-        self.textEdit.setTabStopWidth(16)
 
         self.currentPath = None
+        self.currentFontSize = 12
+
+        self.textEdit.setTabStopWidth(16)
+        self.textEdit.setFontPointSize(self.currentFontSize)
 
         self.actionNew.triggered.connect(self.newFile)
         self.actionSave.triggered.connect(self.saveFile)
@@ -86,10 +89,13 @@ class Main(QMainWindow, Ui_MainWindow):
 
     
     def incFontSize(self):
-        ""
+        self.currentFontSize += 1
+        self.textEdit.setFontPointSize(self.currentFontSize)
     
     def decFontSize(self):
-        ""
+        self.currentFontSize -= 1
+        self.textEdit.setFontPointSize(self.currentFontSize)
+
 
 
     
