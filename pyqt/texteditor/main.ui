@@ -47,8 +47,8 @@
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="separator"/>
-    <addaction name="actionCopy"/>
     <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
    </widget>
    <widget class="QMenu" name="menuAppearance">
@@ -58,7 +58,8 @@
     <addaction name="actionSet_Dark_Mode"/>
     <addaction name="actionSet_Light_Mode"/>
     <addaction name="separator"/>
-    <addaction name="actionChange_Font_Size"/>
+    <addaction name="actionIncrease_Font_Size"/>
+    <addaction name="actionDecrease_Font_Size"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -98,12 +99,12 @@
     <string>Redo</string>
    </property>
   </action>
-  <action name="actionCopy">
+  <action name="actionCut">
    <property name="text">
     <string>Cut</string>
    </property>
   </action>
-  <action name="actionCut">
+  <action name="actionCopy">
    <property name="text">
     <string>Copy</string>
    </property>
@@ -123,14 +124,19 @@
     <string>Set Light Mode</string>
    </property>
   </action>
-  <action name="actionChange_Font_Size">
+  <action name="actionIncrease_Font_Size">
    <property name="text">
-    <string>Change Font Size</string>
+    <string>Increase Font Size</string>
    </property>
   </action>
   <action name="actionOpen">
    <property name="text">
     <string>Open</string>
+   </property>
+  </action>
+  <action name="actionDecrease_Font_Size">
+   <property name="text">
+    <string>Decrease Font Size</string>
    </property>
   </action>
  </widget>
