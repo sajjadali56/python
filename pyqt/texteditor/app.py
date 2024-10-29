@@ -1,9 +1,12 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 from PyQt5.uic import loadUi
 
 import sys
 
 from ui.main import Ui_MainWindow
+from service import *
+
+filter = "Text Files (*.py *.txt *.java *.html)"
 
 class Main(QMainWindow, Ui_MainWindow):
 
@@ -11,6 +14,8 @@ class Main(QMainWindow, Ui_MainWindow):
         super(Main, self).__init__()
         # loadUi("ui/main.ui", self)
         self.setupUi(self)
+
+        self.currentPath = None
 
         self.actionNew.triggered.connect(self.newFile)
         self.actionSave.triggered.connect(self.saveFile)
@@ -30,16 +35,34 @@ class Main(QMainWindow, Ui_MainWindow):
         self.actionPaste.triggered.connect(lambda: self.textEdit.paste())
 
     def newFile(self):
-        print("new file")
+        self.textEdit.clear()
+        self.setWindowTitle("Untitled")
+        self.currentPath = None
     
     def saveFile(self):
-        ""
+        if self.currentPath:
+            write(self.currentPath, self.textEdit.toPlainText())
+        else:
+            self.saveFileAs()
 
     def saveFileAs(self):
-        ""
+        filename = QFileDialog.getSaveFileName(self, "Save File", ".", filter)[0]
+        if filename:
+            self.currentPath = filename
+            self.setWindowTitle(filename)
+            write(self.currentPath, self.textEdit.toPlainText())
     
     def openFile(self):
-        ""
+        filename = QFileDialog.getOpenFileName(self, "Open File", ".", filter)[0]
+        if not filename:
+            return
+        
+        self.currentPath = filename
+        self.setWindowTitle(filename)
+        text = read(filename)
+        self.textEdit.setText(text)
+
+        
             
     def setDarkMode(self):
         ""
