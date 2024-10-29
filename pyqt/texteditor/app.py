@@ -3,11 +3,13 @@ from PyQt5.uic import loadUi
 
 import sys
 
-class Main(QMainWindow):
+from main import Ui_MainWindow
+
+class Main(QMainWindow, Ui_MainWindow):
 
     def __init__(self):
         super(Main, self).__init__()
-        loadUi("main.ui", self)
+        # loadUi("main.ui", self)
 
         self.actionNew.triggered.connect(self.newFile)
         self.actionSave.triggered.connect(self.saveFile)
