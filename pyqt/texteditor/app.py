@@ -76,13 +76,14 @@ class Main(QMainWindow, Ui_MainWindow):
         QTextEdit{
             background-color: rgb(46,46,46);
         }
-            QMenuBar::item:selected{
-            color: #000000
+        QMenuBar::item:selected{
+            color: #FFF
         } 
         """)
 
     def setLightMode(self):
-        ""
+        self.setStyleSheet("")
+
     
     def incFontSize(self):
         ""
