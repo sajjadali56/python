@@ -38,6 +38,7 @@ class Main(QMainWindow, Ui_MainWindow):
         self.actionCut.triggered.connect(lambda: self.textEdit.cut())
         self.actionCopy.triggered.connect(lambda: self.textEdit.copy())
         self.actionPaste.triggered.connect(lambda: self.textEdit.paste())
+        
 
     def newFile(self):
         self.textEdit.clear()
@@ -95,7 +96,6 @@ class Main(QMainWindow, Ui_MainWindow):
     def decFontSize(self):
         self.currentFontSize -= 1
         self.textEdit.setFontPointSize(self.currentFontSize)
-
 
 
     

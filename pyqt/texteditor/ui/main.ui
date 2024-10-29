@@ -175,6 +175,11 @@
     <string>Ctrl+Shift+-</string>
    </property>
   </action>
+  <action name="actionChange_Font">
+   <property name="text">
+    <string>Change Font</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -65,6 +65,8 @@ class Ui_MainWindow(object):
         self.actionOpen.setObjectName("actionOpen")
         self.actionDecrease_Font_Size = QtWidgets.QAction(MainWindow)
         self.actionDecrease_Font_Size.setObjectName("actionDecrease_Font_Size")
+        self.actionChange_Font = QtWidgets.QAction(MainWindow)
+        self.actionChange_Font.setObjectName("actionChange_Font")
         self.menuFile.addAction(self.actionNew)
         self.menuFile.addAction(self.actionOpen)
         self.menuFile.addSeparator()
@@ -121,3 +123,4 @@ class Ui_MainWindow(object):
         self.actionOpen.setShortcut(_translate("MainWindow", "Ctrl+O"))
         self.actionDecrease_Font_Size.setText(_translate("MainWindow", "Decrease Font Size"))
         self.actionDecrease_Font_Size.setShortcut(_translate("MainWindow", "Ctrl+Shift+-"))
+        self.actionChange_Font.setText(_translate("MainWindow", "Change Font"))
