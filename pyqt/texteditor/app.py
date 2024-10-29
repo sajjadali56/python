@@ -37,19 +37,20 @@ class Main(QMainWindow):
         ""
     
     def undo(self):
-        ""
+        self.textEdit.undo()
 
     def redo(self):
-        ""
+        self.textEdit.redo()
     
     def cut(self):
-        ""
+        self.textEdit.cut()
+        
     
     def copy(self):
-        ""
+        self.textEdit.copy()
     
     def paste(self):
-        ""
+        self.textEdit.paste()
     
     def setDarkMode(self):
         ""
