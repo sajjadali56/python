@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 import sys
 
 from ui.main import Ui_MainWindow
@@ -18,7 +18,14 @@ class EmailSender(QMainWindow, Ui_MainWindow):
         subject = self.lineEditSub.text().strip()
         body = self.textEditEmail.toPlainText().strip()
 
-        send_email(recipient, subject, body)
+        if recipient:
+            send_email(recipient, subject, body)
+        else:
+            message = QMessageBox()
+            message.setWindowTitle("Error!")
+            message.setText("Please write the recipient address...")
+            message.setIcon(QMessageBox.Icon.Critical)
+            message.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
