@@ -17,7 +17,7 @@
    <property name="styleSheet">
     <string notr="true">QWidget{
 	background-color: rgb(33, 33, 33);
-	color: #FFF;
+	color: #FFFFFF;
 }
 
 QTextEdit{
@@ -33,6 +33,19 @@ QPushButton {
 }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lineEditRec"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QTextEdit" name="textEditEmail"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButtonSend">
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="labelRecipient">
       <property name="text">
@@ -40,25 +53,22 @@ QPushButton {
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEditRec"/>
-    </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QLabel" name="labelEmail">
       <property name="text">
        <string>Email</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QTextEdit" name="textEditEmail"/>
-    </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="pushButtonSend">
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelSub">
       <property name="text">
-       <string>Send</string>
+       <string>Subject</string>
       </property>
      </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEditSub"/>
     </item>
    </layout>
   </widget>

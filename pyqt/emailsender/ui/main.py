@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
 "    background-color: rgb(33, 33, 33);\n"
-"    color: #FFF;\n"
+"    color: #FFFFFF;\n"
 "}\n"
 "\n"
 "QTextEdit{\n"
@@ -35,21 +35,27 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.labelRecipient = QtWidgets.QLabel(self.centralwidget)
-        self.labelRecipient.setObjectName("labelRecipient")
-        self.gridLayout.addWidget(self.labelRecipient, 0, 0, 1, 1)
         self.lineEditRec = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEditRec.setObjectName("lineEditRec")
         self.gridLayout.addWidget(self.lineEditRec, 0, 1, 1, 1)
-        self.labelEmail = QtWidgets.QLabel(self.centralwidget)
-        self.labelEmail.setObjectName("labelEmail")
-        self.gridLayout.addWidget(self.labelEmail, 1, 0, 1, 1)
         self.textEditEmail = QtWidgets.QTextEdit(self.centralwidget)
         self.textEditEmail.setObjectName("textEditEmail")
-        self.gridLayout.addWidget(self.textEditEmail, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.textEditEmail, 2, 1, 1, 1)
         self.pushButtonSend = QtWidgets.QPushButton(self.centralwidget)
         self.pushButtonSend.setObjectName("pushButtonSend")
-        self.gridLayout.addWidget(self.pushButtonSend, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.pushButtonSend, 3, 1, 1, 1)
+        self.labelRecipient = QtWidgets.QLabel(self.centralwidget)
+        self.labelRecipient.setObjectName("labelRecipient")
+        self.gridLayout.addWidget(self.labelRecipient, 0, 0, 1, 1)
+        self.labelEmail = QtWidgets.QLabel(self.centralwidget)
+        self.labelEmail.setObjectName("labelEmail")
+        self.gridLayout.addWidget(self.labelEmail, 2, 0, 1, 1)
+        self.labelSub = QtWidgets.QLabel(self.centralwidget)
+        self.labelSub.setObjectName("labelSub")
+        self.gridLayout.addWidget(self.labelSub, 1, 0, 1, 1)
+        self.lineEditSub = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEditSub.setObjectName("lineEditSub")
+        self.gridLayout.addWidget(self.lineEditSub, 1, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 27))
@@ -65,6 +71,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButtonSend.setText(_translate("MainWindow", "Send"))
         self.labelRecipient.setText(_translate("MainWindow", "Receipient"))
         self.labelEmail.setText(_translate("MainWindow", "Email"))
-        self.pushButtonSend.setText(_translate("MainWindow", "Send"))
+        self.labelSub.setText(_translate("MainWindow", "Subject"))
