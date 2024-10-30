@@ -13,7 +13,6 @@ class EmailSender(QMainWindow, Ui_MainWindow):
         self.pushButtonSend.clicked.connect(self.sendEmail)
 
     def sendEmail(self):
-        print("Send Email")
 
         recipient = self.lineEditRec.text().strip()
         subject = self.lineEditSub.text().strip()
