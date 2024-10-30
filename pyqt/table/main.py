@@ -7,6 +7,17 @@ def get_styles() -> str:
         styles = f.read()
     return styles
 
+def get_data():
+    path = "MOCK_DATA.csv"
+    with open(path, "r") as file:
+        data = file.read().split("\n")
+
+    headers = data[0].split(",")
+    headers.remove("id")
+    list_values = [val.split(",")[1:] for val in data[1:]]
+
+    return headers, list_values
+
 class Main(QWidget):
     def __init__(self):
         super(Main, self).__init__()
@@ -24,23 +35,17 @@ class Main(QWidget):
         self.load_data()
     
     def load_data(self):
-        path = "MOCK_DATA.csv"
-        with open(path, "r") as file:
-            data = file.read().split("\n")
-        headers = data[0].split(",")
-        headers.remove("id")
-        list_values = [val.split(",")[1:] for val in data[1:]]
+        headers, list_values = get_data()
+        rows_count, column_count = len(list_values), len(headers)
 
-        self.table_widget.setRowCount(len(data))
-        self.table_widget.setColumnCount(len(headers))
+        self.table_widget.setRowCount(rows_count)
+        self.table_widget.setColumnCount(column_count)
 
         self.table_widget.setHorizontalHeaderLabels(headers)
         
-        for i in range(len(list_values)):
-            value = list_values[i]
-            for j in range(len(value)):
-                item = QTableWidgetItem(value[j])
-                self.table_widget.setItem(i, j, item)   
+        for i in range(rows_count):
+            for j in range(column_count):
+                self.table_widget.setItem(i, j, QTableWidgetItem(list_values[i][j]))  
 
         self.setStyleSheet(get_styles())
          

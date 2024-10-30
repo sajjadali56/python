@@ -10,9 +10,9 @@ QTableWidget {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 8px;
-    gridline-color: #dcdcdc;
+    /* gridline-color: #dcdcdc;
     selection-background-color: #a3c9f7;
-    selection-color: #333;
+    selection-color: #333; */
     margin: 20px;
 }
 
@@ -55,7 +55,7 @@ QScrollBar::handle:vertical {
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
     height: 0;
     width: 0;
-    subcontrol-origin: margin;
+    /* subcontrol-origin: margin; */
 }
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
@@ -79,7 +79,7 @@ QScrollBar::handle:horizontal {
 QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
     height: 0;
     width: 0;
-    subcontrol-origin: margin;
+    /* subcontrol-origin: margin; */
 }
 
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
