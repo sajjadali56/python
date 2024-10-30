@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QHeaderView
 
 import sys
 
@@ -17,6 +17,9 @@ class Main(QWidget):
 
         self.table_widget = QTableWidget()
         layout.addWidget(self.table_widget)
+
+        # Adjust each column width to fit content
+        self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         self.load_data()
     
