@@ -14,6 +14,24 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color: rgb(33, 33, 33);
+	color: #FFF;
+}
+
+QTextEdit{
+	background-color: rgb(46, 46, 46);	
+}
+
+QLineEdit{
+    background-color: rgb(46, 46, 46);
+}
+
+QPushButton {
+    background-color: rgb(120, 120, 120);
+}</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="labelRecipient">

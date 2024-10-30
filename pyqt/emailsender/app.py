@@ -3,14 +3,14 @@ import sys
 
 from ui.main import Ui_MainWindow
 
-class Main(QMainWindow, Ui_MainWindow):
+class EmailSender(QMainWindow, Ui_MainWindow):
 
     def __init__(self):
-        super(Main, self).__init__()
+        super(EmailSender, self).__init__()
         self.setupUi(self)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ui = Main()
+    ui = EmailSender()
     ui.show()
-    app.exec_()
+    app.exec_() 

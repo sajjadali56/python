@@ -16,6 +16,22 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("QWidget{\n"
+"    background-color: rgb(33, 33, 33);\n"
+"    color: #FFF;\n"
+"}\n"
+"\n"
+"QTextEdit{\n"
+"    background-color: rgb(46, 46, 46);    \n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"    background-color: rgb(46, 46, 46);\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    background-color: rgb(120, 120, 120);\n"
+"}")
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
