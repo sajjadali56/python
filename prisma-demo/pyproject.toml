@@ -1,0 +1,6 @@
+[tool.pyright]
+include = [
+    "./src/main.py",
+]
+
+typeCheckingMode = "strict"
