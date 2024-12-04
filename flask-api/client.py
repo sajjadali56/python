@@ -11,6 +11,8 @@ Response: user object with fields id, name, and email! 201 Created
 """
 
 API = "http://localhost:5000/users/"
+
+
 def add_user(user_name, user_email):
     obj = {
         "name": user_name,
@@ -23,12 +25,14 @@ def add_user(user_name, user_email):
     else:
         print("User not created")
 
+
 def get_user(id):
     res = requests.get(f"{API}{id}/")
     if res.status_code == http.HTTPStatus.OK:
         print(res.json())
     else:
         print("User not found")
+
 
 def update_user(id, user_name, user_email):
     obj = {
@@ -42,6 +46,7 @@ def update_user(id, user_name, user_email):
     else:
         print("User not updated")
 
+
 def delete_user(id):
     res = requests.delete(f"{API}{id}/")
     if res.status_code == http.HTTPStatus.OK:
@@ -49,12 +54,14 @@ def delete_user(id):
     else:
         print("User not deleted")
 
+
 def get_all_users():
     res = requests.get(API)
     if res.status_code == http.HTTPStatus.OK:
         print(res.json())
     else:
         print("No user found")
+
 
 ADD_USER = 1
 GET_USER = 2
@@ -74,6 +81,7 @@ Type Any Number in the menue for preferred operation:
 
     """
 
+
 def main():
     users = []
     while True:
@@ -83,14 +91,17 @@ def main():
             user_name = input("Enter the user name: ")
             user_email = input("Enter the user email: ")
             add_user(user_name, user_email)
+            users.append({"name": user_name, "email": user_email})
         elif choice == GET_USER:
             user_id = int(input("Enter the user id: "))
             get_user(user_id)
+
         elif choice == UPDATE_USER:
             user_id = int(input("Enter the user id: "))
             user_name = input("Enter the user name: ")
             user_email = input("Enter the user email: ")
             update_user(user_id, user_name, user_email)
+
         elif choice == DELETE_USER:
             user_id = int(input("Enter the user id: "))
             delete_user(user_id)
@@ -100,6 +111,7 @@ def main():
             break
         else:
             print("Invalid choice")
+
 
 if __name__ == "__main__":
     main()
