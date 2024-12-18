@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quorto Website",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#python-code",
+    "href": "index.html#python-code",
+    "title": "Quorto Website",
+    "section": "Python code",
+    "text": "Python code\n\\(f(x) = \\sqrt{x}\\)\n\n\nCode\nimport numpy as np\nimport seaborn as sns\n\ndata = [np.sqrt(i) for i in range(100)]\n\nsns.lineplot(data)\n\n\n\n\n\nSquare Root Plot (\\(f(x) = \\sqrt{x}\\))"
+  },
+  {
+    "objectID": "data-class.html",
+    "href": "data-class.html",
+    "title": "Data Class",
+    "section": "",
+    "text": "Code\nimport pickle\nfrom dataclasses import dataclass\n\n\n@dataclass\nclass User:\n    \"\"\"User dataclass\"\"\"\n    name: str\n    age: int\n    job: str\n    city: str\n    country: str\n    hobbies: list\n    favorite_color: str\n    favorite_number: int\n    favorite_movie: str\n\n\ndata: list[User] = [\n    User(\n        name=\"John\",\n        age=30,\n        job=\"Engineer\",\n        city=\"New York\",\n        country=\"USA\",\n        hobbies=[\"Reading\", \"Playing video games\"],\n        favorite_color=\"Blue\",\n        favorite_number=7,\n        favorite_movie=\"The Matrix\",\n    ),\n    User(\n        name=\"Jane\",\n        age=25,\n        job=\"Designer\",\n        city=\"London\",\n        country=\"UK\",\n        hobbies=[\"Drawing\", \"Listening to music\"],\n        favorite_color=\"Red\",\n        favorite_number=3,\n        favorite_movie=\"The Avengers\",\n),]\n\n\nwith open(\"data.pkl\", \"wb\") as f:\n    pickle.dump(data, f)\n\nwith open(\"data.pkl\", \"rb\") as f:\n    data = pickle.load(f)\n\nprint(data[0].name)\n\n\nJohn"
+  }
+]
