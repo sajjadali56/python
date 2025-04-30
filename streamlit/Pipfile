@@ -6,8 +6,15 @@ name = "pypi"
 [packages]
 streamlit = "*"
 streamlit-authenticator = "*"
+pandas = "*"
+openpyxl = "*"
+seaborn = "*"
+matplotlib = "*"
+streamlit-option-menu = "*"
+streamlit-shadcn-ui = "*"
 
 [dev-packages]
+types-seaborn = "*"
 
 [requires]
 python_version = "3.13"
